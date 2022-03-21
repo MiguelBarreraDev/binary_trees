@@ -1,0 +1,4 @@
+#ignore compilate (files without extension).
+*
+!/**/
+!*.*
