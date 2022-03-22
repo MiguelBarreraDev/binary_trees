@@ -1,5 +1,5 @@
-#ifndef BN_TREE
-#define BN_TREE
+#ifndef BN_TREE_H
+#define BN_TREE_H
 
 /*---------------------------------*/
 /*=========== LIBRARIES ===========*/
@@ -20,13 +20,14 @@
  * @left: Pointer to the left child node
  * @right: Pointer to the right child node
  */
-typedef struct binary_tree_s
+struct binary_tree_s
 {
 	int n;
 	struct binary_tree_s *parent;
 	struct binary_tree_s *left;
 	struct binary_tree_s *right;
 };
+
 /*Default name struct*/
 typedef struct binary_tree_s binary_tree_t;
 /*Binary search tree*/
