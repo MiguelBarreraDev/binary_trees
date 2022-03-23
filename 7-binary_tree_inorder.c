@@ -11,7 +11,7 @@
  */
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
-	/* INFO! The left subtree is visited first, then the root and later the right sub-tree. */
+	/* INFO! The left subtree is first, then the root and later the right sub-tree. */
 
 	if (!tree || !func)
 		return;
