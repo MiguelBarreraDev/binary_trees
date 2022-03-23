@@ -11,13 +11,14 @@
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
+	/* INFO! The root node is first, then the left and the right subtree. */
+
 	if (!tree || !func)
 		return;
 
-	/* INFO! Print (n) of the Node */
+	/* Print (n) of the Node */
 	func(tree->n);
 
-	/* INFO! The root node is first, then the left and the right subtree. */
 	binary_tree_preorder(tree->left, func);
 	binary_tree_preorder(tree->right, func);
 }
