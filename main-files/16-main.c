@@ -33,5 +33,15 @@ int main(void)
 	binary_tree_print(root);
 	perfect = binary_tree_is_perfect(root);
 	printf("Perfect: %d\n", perfect);
+
+	root->left->left->left = binary_tree_node(root->left->left, 5);
+	binary_tree_print(root);
+	perfect = binary_tree_is_perfect(root);
+	printf("Perfect: %d\n", perfect);
+
+	root->left->left->right = binary_tree_node(root->left->right, 5);
+	binary_tree_print(root);
+	perfect = binary_tree_is_perfect(root);
+	printf("Perfect: %d\n", perfect);
 	return (0);
 }

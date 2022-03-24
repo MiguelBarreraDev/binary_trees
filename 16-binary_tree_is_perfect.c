@@ -1,9 +1,7 @@
 #include "binary_trees.h"
 #include <stddef.h>
 
-#define MAX(v1, v2) ((v1 >= v2) ? (v1) : (v2))
-
-size_t height(const binary_tree_t *tree);
+int equal_height(const binary_tree_t *tree);
 int binary_tree_is_full(const binary_tree_t *tree);
 
 /**
@@ -15,7 +13,7 @@ int binary_tree_is_full(const binary_tree_t *tree);
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int lg = 0, rg = 0, is_full = 0;
+	int is_full = 0;
 
 	if (!tree)
 		return (0);
@@ -24,24 +22,18 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (!is_full)
 		return (0);
 
-	if (tree->left)
-		lg = 1 + height(tree->left);
-
-	if (tree->right)
-		rg = 1 + height(tree->right);
-
-	return ((lg == rg) ? 1 : 0);
+	return (equal_height(tree->left) && equal_height(tree->right));
 }
 
 /**
- * height - Function that measures the height of a binary tree.
+ * equal_height - Function that measures the height of a binary tree.
  * If tree is NULL, your function must return 0.
  *
  * @tree: Is a pointer to the root node of the tree to measure the height.
  *
  * Return: The height of the tree.
  */
-size_t height(const binary_tree_t *tree)
+int equal_height(const binary_tree_t *tree)
 {
 	size_t left_height = 0, right_height = 0;
 
@@ -51,10 +43,13 @@ size_t height(const binary_tree_t *tree)
 	if (!(tree->left) && !(tree->right))
 		return (0);
 
-	left_height = height(tree->left);
-	right_height = height(tree->right);
+	left_height = equal_height(tree->left);
+	right_height = equal_height(tree->right);
 
-	return (1 + MAX(left_height, right_height));
+	if (left_height == right_height)
+		return (1);
+	else
+		return (0);
 }
 /**
  * binary_tree_is_full - Function that checks if a binary tree is full.
