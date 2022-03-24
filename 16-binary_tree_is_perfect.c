@@ -30,7 +30,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (tree->right)
 		rg = 1 + height(tree->right);
 
-	return (lg == rg);
+	return ((lg == rg) ? 1 : 0);
 }
 
 /**
