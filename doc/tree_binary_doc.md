@@ -72,7 +72,7 @@ bool isPerfect(struct node *root, int depth, int level)
 bool isComplete(struct node *root, index, numberNodes)
 {
   if (!root)
-    return (false);
+    return (true);
 
   if (index >= numberNodes)
     return (false);

@@ -64,3 +64,6 @@ node *insertData(node *node, data)
   1. Get the inorder successor of that node
   2. Replace the node will the inorder successor
   3. Remove the inorder successor from its original position
+
+## URL's
+- https://www.programiz.com/dsa/binary-search-tree
