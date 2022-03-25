@@ -39,6 +39,6 @@ int is_bst(const binary_tree_t *node, int min, int max)
 	if (node->n > max)
 		return (0);
 	/* Sending in updates ranges to the right and left subtree */
-	return (is_bst(node->right, node->n, max) &&
-		is_bst(node->left, min, node->n));
+	return (is_bst(node->right, node->n + 1, max) &&
+		is_bst(node->left, min, node->n - 1));
 }
