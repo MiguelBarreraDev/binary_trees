@@ -52,6 +52,7 @@ A hierarchical data structure like a tree can be traversed in different ways.
 2. Visit all the nodes in the right subtree
 3. Visit the root node
 
+
 ## Types of tree
 - Binary Tree
 - Binary Search Tree
